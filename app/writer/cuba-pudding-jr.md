@@ -5,3 +5,7 @@
 Recipe Picks:
 
 - January: [Grilled Peach Salad](../recipe/jan/grilled-peach-salad.md)
+
+Here's today's new recipe picks: 
+next would be: git add -> git commit -> git push
+then try out git pull and merge(?)
