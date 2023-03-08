@@ -26,3 +26,5 @@ Source: https://sortedfood.com/recipe/971
 4. Cut up all the berries and leave to soak in the rose with a spoonful of sugar overnight.
 5. Dunk the moulds into hot water to loosen the panna cottas and turn out onto a plate.
 6. Scatter with macerated berries and garnish with a sprig of mint. Serves 4
+
+7. Serves 4 but actly 1. I'm in a moving car i'm about to puke. 
