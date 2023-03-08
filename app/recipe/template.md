@@ -6,11 +6,11 @@ Source: https://example.com/link/to/original/recipe/
 
 ## Ingredients
 
-- 
-- 
-- 
-- 
-- 
+- onion
+- cabbage
+- chilli
+- vege 
+- brocooli
 - 
 - 
 
