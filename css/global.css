@@ -1,0 +1,53 @@
+
+
+
+/*  Global spec */
+
+
+/* This NEEDS to be inserted into html. 
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
+*/
+
+/* google font - Lato Thin 300 */
+* {
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+/* h1 to h6 */
+h1{
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+
+
+
+/* KIV 
+
+- Desktop width 1000px
+- mobile 600px
+
+ */
