@@ -58,7 +58,7 @@ h6 {
     background: 
       url("../img/assets/aboutusbg.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     
     /* background-repeat: no-repeat; */
   }

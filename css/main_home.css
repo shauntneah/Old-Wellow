@@ -86,6 +86,16 @@ h6 {
   object-fit: cover;
 }
 
+/* new arrivals display */
+.mobile-image {
+
+   width: 40%; 
+   height: auto;
+  margin: 15px auto;
+  
+  /* border: 1px solid black; */
+}
+
 
 
 

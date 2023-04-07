@@ -22,21 +22,7 @@ h6 { font-size: 18px; }
 
 
 /* Footer */
-footer {
-   display: flex;
-   flex-flow: column wrap;
-  
-}
 
-
-
-
-.footerIcons {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   padding: 0px 20px;
-}
 
 
 /* to set icon size */
@@ -52,70 +38,3 @@ footer {
 }
 
 
-.footerIcons div {
-   margin: 55px 99px;
-}
-
-
-.addressCopyright {
-   display: flex;
-   justify-content: center;
-   align-content: flex-end;
-}
-
-
-/*
-media query example
-- max-width 700px
-*/
-
-
-@media screen and (max-width: 700px) {
-
-
-   /* These styles will be applied if the screen size is <= 700px */
-
-
-   footer {
-       display: flex;
-       flex-direction: column;
-   }
-
-
-   h1 { font-size: 27px; }
-   h2 { font-size: 23px; }
-   h3 { font-size: 21px; }
-   h4 { font-size: 19px; }
-   h5 { font-size: 17px; }
-   h6 { font-size: 15px; }
-
-
-   .footerIcons img {
-       height: 30px;
-       width: 30px;
-   }
-
-
-   .footerIcons div {
-       margin: 20px 20px;
-   }
-
-
-   .footerIcons {
-       justify-content: center;
-       max-width: 100%;
-   }
-      
-
-
-} 
-
-
-/* End of media  */
-
-
-/* @media screen and (max-width: 700px) {
-   section {
-       color:red;
-   }
-} */
