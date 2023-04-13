@@ -40,7 +40,7 @@
         <hr class="featurette-divider">
 
         <section style="background-color: white;">
-            <div class="container py-5">
+            <div class="container py-5" id="products">
                 <div class="row justify-content-center mb-3 mobile-card">
                     <div class="col-md-12 col-xl-10">
                         <div class="card shadow-0 border rounded-3">
@@ -48,8 +48,8 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                                         <div class="bg-image hover-zoom ripple rounded ripple-surface mobile-image">
-                                            <img src="img/products/apple.png" class="w-75"/>
-                                            <a href="#!">
+                                            <img src="img/products/apple.png" class="w-75" />
+                                            <a href="#">
                                                 <div class="hover-overlay">
                                                     <div class="mask"
                                                         style="background-color: rgba(253, 253, 253, 0.15);"></div>
@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-xl-6">
                                         <h5>Apples</h5>
-                                       
+
                                         <div class="mt-1 mb-0 text-muted small">
                                             <span>Fresh</span>
                                             <span class="text-primary"> • </span>
@@ -67,20 +67,15 @@
                                             <span class="text-primary"> • </span>
                                             <span>Fruits<br /></span>
                                         </div>
-                                        <div class="mb-2 text-muted small">
-                                            <span>Red</span>
-                                            <span class="text-primary"> • </span>
-                                            <span>Apple</span>
-                                            <span class="text-primary"> • </span>
-                                            <span>Casual<br /></span>
-                                        </div>
+
                                         <p class="mb-2 mb-md-2">
                                             There are many variations of passages of Lorem Ipsum available, but the
                                             majority have suffered alteration in some form, by injected humour, or
                                             randomised words which don't look even slightly believable.
-                                            
+
                                         </p>
-                                        <button class="btn btn-primary btn-sm mb-5 mb-md-3" type="button" >Details</button>
+                                        <button class="btn btn-primary btn-sm mb-5 mb-md-3"
+                                            type="button">Details</button>
 
                                     </div>
                                     <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
@@ -90,9 +85,9 @@
                                         </div>
                                         <!-- <h6 class="text-success">Free shipping</h6> -->
                                         <div class="d-flex flex-column mt-4">
-                                            <h6 class="text">Quantity: </h6>
-                                            <input class="" type="number" id="stepper" name="stepper" value="1"
-                                                min="1" max="100" step="1">
+                                            <h6 class="text">Quantity:</h6>
+                                            <input class="" type="number" id="stepper" name="stepper" value="1" min="1"
+                                                max="100" step="1">
                                             <button class="btn btn-outline-primary btn-sm mt-2" type="button">
                                                 Add to shopping cart
                                             </button>
@@ -121,7 +116,7 @@
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-xl-6">
                                         <h5>Green Peas</h5>
-                                       
+
                                         <div class="mt-1 mb-0 text-muted small">
                                             <span>Fresh</span>
                                             <span class="text-primary"> • </span>
@@ -181,7 +176,7 @@
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-xl-6">
                                         <h5>Pear</h5>
-                                        
+
                                         <div class="mt-1 mb-0 text-muted small">
                                             <span>100% fresh</span>
                                             <span class="text-primary"> • </span>
@@ -226,6 +221,44 @@
             </div>
         </section>
 
+
+        <!-- product modal -->
+        <div class="modal fade p-4 py-md-5" id="productModal" tabindex="-1"
+        role="dialog">
+        <div class="modal-dialog" id="displayProduct" role="document">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-body p-5">
+                    <h2 class="fw-bold mb-2">Product Name</h2>
+
+
+
+
+                    <img src="../../img/products/Pink_lettuce.jpg" class="bi text-body-secondary flex-shrink-0"
+                        width="50%" height="50%">
+                    <div>
+                        <div class="mt-1 mb-0 text-muted small">
+                            <span>Fresh</span>
+                            <span class="text-primary"> • </span>
+                            <span>Local</span>
+                            <span class="text-primary"> • </span>
+                            <span>Fruits<br /></span>
+                        </div>
+                        <h5 class="mb-0">Grid view</h5>
+
+                        Not into lists? Try the new grid view. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Corporis odit repellat numquam porro aspernatur assumenda perspiciatis fuga, accusamus optio hic
+                        in ipsum saepe, quis dicta neque voluptates nulla deleniti quia.
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <a class="btn btn-primary" data-bs-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </div>
 
     <div id="footer"></div>
@@ -247,9 +280,9 @@
         });
     </script>
     <script src="js/compon_navbar.js"></script>
+    <script src="js/productController.js"></script>
 
 
-    
 
 
 </body>

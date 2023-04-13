@@ -1,0 +1,69 @@
+{
+  "per_page": 6,
+  "data": [
+    {
+      "id": 1,
+      "name": "Pink Lettuce",
+      "imageURL": "img/products/Pink_lettuce.jpg",
+      "stock": "40",
+      "unit": "kg",
+      "price": 37,
+      "summary": "Pinky Lettuce",
+      "description": "Popularly known as Millennial Pink Lettuce or also referred to as Radicchio del Veneto, this is a rosy-coloured chicory. The pink vegetable is not a new concept, as it grown for years primarily throughout Italian regions such as Verona & southern France. Our beautiful natural pink lettuce is grown locally with imported seedlings in our hi-tech , HEPA climate controlled indoor vertical farming facility at 1 Instana and is harvested fresh, with only a limited stock available daily. A millennial trendy item, this lettuce is sure to bring a level of excitement to the mundane vegetable world & food enthusiasts on Instagram. Its great for food wraps, addition into salads or as for colour contrast decoration."
+    },
+    {
+      "id": 2,
+      "name": "King Oyster Mushroom",
+      "imageURL": "img/products/king_oyster.jpg",
+      "stock": "100",
+      "unit": "kg",
+      "price": 18,
+      "summary": "Juicy Mushroom",
+      "description": "Great for BBQ"
+    },
+    {
+      "id": 3,
+      "name": "Truffle White Mushroom",
+      "imageURL": "img/products/Truffle_white.jpg",
+      "stock": "1000",
+      "unit": "gram",
+      "price": 25,
+      "summary": "Premium Wild White Truffles",
+      "description": "Premium wild truffle white mushroom"
+    },
+    {
+      "id": 4,
+      "name": "Wasabi Roots",
+      "imageURL": "img/products/wasabi_roots.jpeg",
+      "stock": "50",
+      "unit": "root",
+      "price": 125,
+      "summary": "Spicy Wasabi!",
+      "description": "Wild cultivated wasabi roots from Japan"
+    },
+    {
+      "id": 5,
+      "name": "La Bonnotte Potatoes",
+      "imageURL": "img/products/La_Bonnotte_Potatoes.jpg",
+      "stock": "20",
+      "unit": "kg",
+      "price": 1025,
+      "summary": "Juicy Potatotes",
+      "description": "The world's most expensive potato"
+    },
+    {
+      "id": 6,
+      "name": "Spanish Peas",
+      "imageURL": "img/products/Spanish_peas.jpg",
+      "stock": "5",
+      "unit": "kg",
+      "price": 650,
+      "summary": "Exclusive peas",
+      "description": "The world's most expensive peas"
+    }
+  ],
+  "support": {
+    "url": "https://github.com/shauntneah/project-wellow",
+    "text": "Prototyping json datafile"
+  }
+}
