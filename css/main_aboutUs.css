@@ -54,27 +54,28 @@ h6 {
 /* ............//// Showcase styling ////......... */
 
 .showcase-area {
-    height: 50vh;
-    background: 
+    height: 450px;
+    background-color: rgb(203, 203, 197);
+    /* background: 
       url("../img/assets/aboutusbg.jpg");
     background-size: cover;
-    background-position: bottom;
+    background-position: bottom; */
     
     /* background-repeat: no-repeat; */
   }
   
   .showcase-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* so that text appear in new line */
     align-items: center;
     justify-content: center;
     height: 100%;
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
   }
   
   .main-title {
     text-transform: uppercase;
-    margin-top: 1.5em;
+    margin-top: 50px;
   }
 
 
@@ -82,37 +83,25 @@ h6 {
 ------------------------- */
 
 .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
   }
   
-  /* Thin out the marketing headings */
-  /* rtl:begin:remove */
-  .featurette-heading {
-    letter-spacing: -.05rem;
-  }
-  
-  /* rtl:end:remove */
+ 
   
   /* RESPONSIVE CSS
   -------------------------------------------------- */
   
-  @media (min-width: 40em) {
-    /* Bump up size of carousel content */
-    /* .carousel-caption p {
-      margin-bottom: 1.25rem;
-      font-size: 1.25rem;
-      line-height: 1.4;
-    }
-   */
+  @media (min-width: 640px) {
+    
     .featurette-heading {
-      font-size: 50px;
+      font-size: 50px; 
     }
   }
   
-  @media (min-width: 62em) {
+  /* @media (min-width: 62em) {
     .featurette-heading {
       margin-top: 7rem;
     }
-  }
+  } */
 
   

@@ -42,28 +42,7 @@ h6 {
     font-size: 18px;
 }
 
-
-
-
-
-/* for the search icon button */
-.btnhover {
-    display: flex;
-    align-items: center;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--bs-body-color);
-    text-align: center;
-    white-space: nowrap;
-    background-color: var(--bs-tertiary-bg);
-
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: 0.375rem;
-}
-
-
+/* Search icon Button hover */
 .btnhover:hover {
     background: #ddd;
 
@@ -93,7 +72,7 @@ header {
 
 }
 
-/* Wellow */
+/* Wellow logo*/
 #brand>a {
     font-weight: bold;
     font-size: 22px;
@@ -112,7 +91,6 @@ nav form {
     margin-top: 8px;
     margin-right: 16px;
     margin-bottom: 8px;
-    font-size: 17px;
 }
 
 /* unordered list styling */
@@ -154,6 +132,19 @@ ul li:hover {
     color: #498afb;
 }
 
+#logout {
+    border: none;
+}
+
+
+#logout a {
+    color: #498afb;
+}
+
+#search-mobile {
+    display: none;
+}
+
 /* Hamburger styling */
 
 #hamburger-icon {
@@ -170,7 +161,9 @@ ul li:hover {
     transition: 0.4s;
 }
 
-/* Hamburger transition into X and back to hamburger */
+/* Hamburger transition into X and back to hamburger 
+The rotate(45deg) function rotates the element 45 degrees clockwise. The translate(-6px, -8px) function then moves the element 6 pixels to the left and 8 pixels up. Together, these functions rotate and move the element diagonally to the left and up.
+*/
 .open .bar1 {
     -webkit-transform: rotate(-45deg) translate(-6px, 6px);
     transform: rotate(-45deg) translate(-6px, 6px);
@@ -203,8 +196,8 @@ ul li:hover {
     position: absolute;
     top: 50px;
     left: 0;
-    height: calc(100vh - 50px);
-    /* height: 100vh; */
+    /* height: calc(100vh - 50px); */
+    height: 50vh;
     width: 100%;
 }
 
@@ -214,30 +207,24 @@ ul li:hover {
 
 /* Shopping cart counter */
 
-.badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-  }
-  
- 
-  #lblCartCount {
-      font-size: 12px;
-      background: #ff0000;
-      color: #fff;
-      padding: 0 5px;
-      vertical-align: top;
-      margin-left: -10px; 
-  }
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
 
 @media only screen and (max-width: 992px) {
-    header nav {
+    /* header nav {
         display: none;
     }
 
     header ul {
+        display: none;
+    } */
+    .hideme {
         display: none;
     }
 
@@ -245,6 +232,7 @@ ul li:hover {
         display: block;
     }
 
+    /* search bar */
     #hamburger-icon input[type=text] {
         float: none;
         display: block;
@@ -252,6 +240,20 @@ ul li:hover {
         width: 300px;
         margin: 0;
         padding: 14px;
+    }
+
+    #search-mobile {
+        display: block;
+        margin: auto;
+        margin-right: 10px;
+        /* float: right; */
+        padding: 6px;
+       
+    }
+
+    #search-mobile form:hover {
+        transform: scale(1.1);
+        transition: 0.3s;
     }
 }
 

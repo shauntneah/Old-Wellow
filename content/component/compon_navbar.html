@@ -17,7 +17,7 @@
         <div id="brand"><a href="#"><img class="d-inline-block align-top" src="img/assets/groceries.png"
                     height="30" />Wellow</a>
 
-            <ul>
+            <ul class="hideme">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="product.html">Products</a></li>
                 <li><a href="aboutUs.html">About Us</a></li>
@@ -25,15 +25,13 @@
             </ul>
 
         </div>
-        <nav>
+        <nav class="hideme">
             <ul>
-                <li><form class="d-flex me-1 mb-2" role="search"> <input type="text" placeholder="Search..">  <button class="input-group-text btnhover" type="submit">
+                <li><form class="d-flex me-1 mb-2" role="search"> <input type="text" class="search-input" placeholder=" Search..">  <button class="input-group-text btnhover" type="submit">
                     <img src="img/assets/magnifying-glass-search.png" height="20">
                 </button></form></li>
-                <!-- <li><a href="/home">Home</a></li>
-            <li><a href="/products">Products</a></li>
-            <li><a href="/about">About</a></li> -->
-                <li id="login"><a href="/login">Login</a></li>
+               
+                <li id="login"><a href="content/component/compon_login.html">Login</a></li>
                 <li id="cart"><a href="#" class="me-1"> <img src="img/assets/grocery-store.png"
                             class="d-inline-block" height="25">
 
@@ -43,6 +41,11 @@
                     </a></li>
             </ul>
         </nav>
+        <div id="search-mobile">
+            <form id="search-form" class="d-flex me-1 mb-2" role="search"> <input type="text" placeholder="Search..">  <button class="input-group-text btnhover" type="submit">
+                <img src="img/assets/magnifying-glass-search.png" height="20">
+            </button></form>
+        </div>
         <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
             <!-- 3 bar for hamburger -->
             <div class="bar1"></div>
@@ -52,10 +55,10 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="product.html">Products</a></li>
                 <li><a href="aboutUs.html">About Us</a></li>
-                <li> <form class="d-flex me-1 mb-2" role="search"> <input type="text" placeholder="Search..">  <button class="input-group-text btnhover" type="submit">
+                <!-- <li> <form id="search-form" class="d-flex me-1 mb-2" role="search"> <input type="text" placeholder="Search..">  <button class="input-group-text btnhover" type="submit">
                     <img src="img/assets/magnifying-glass-search.png" height="20">
-                </button></form></li>
-                <li id="login"><a href="#">Login</a></li>
+                </button></form></li> -->
+                <li id="login"><a href="compon_login.html">Login</a></li>
                 <li id="cart"><a href="#" class="me-1"> <img src="img/assets/grocery-store.png"
                             class="d-inline-block" height="25">
 

@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/compon_login.css"> <!-- loads css -->
+  <link rel="stylesheet" href="../../css/compon_login.css"> <!-- loads css -->
   <script src="/js/compon_login.js"></script> <!-- loads javascript -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <!-- loads bootstrap -->
   <title>Login Page</title>
 </head>
 
@@ -17,7 +20,7 @@
 
     <!-- logo -->
     <div class="logo">
-      <img src="/img/assets/logo_login.png" alt="Logo" width="300" height="45">
+      <img src="../../img/assets/groceries.png" alt="Logo" height="45">
     </div>
 
     <!-- spacer -->
@@ -29,29 +32,31 @@
       <p>Please enter login details to continue</p>
     </div>
 
-    <!-- user id -->
-    <div class="text">
-      <p>Username/Email</p>
-      <input type="text" name="username" id="username">
-    </div>
+    <form class="">
+      <!-- user id -->
+      <div class="text">
+        <p>Username/Email</p>
+        <input type="text" name="username" id="username" class="form-control" required>
+      </div>
 
-    <!-- spacer -->
-    <div class="spacer"></div>
+      <!-- spacer -->
+      <div class="spacer"></div>
 
-    <!-- password field -->
-    <div class="text">
-      <p>Password</p>
-      <input type="password" name="password" id="password">
-    </div>
+      <!-- password field -->
+      <div class="text">
+        <p>Password</p>
+        <input type="password" name="password" id="password" class="form-control" required>
+      </div>
 
-    <!-- spacer -->
-    <div class="spacer"></div>
+      <!-- spacer -->
+      <div class="spacer"></div>
 
-    <!-- Sumbit button -->
-    <div class="button">
-      <button type="submit"
-        onclick="login(document.getElementById('username').value, document.getElementById('password').value)">Login</button>
-    </div>
+      <!-- Sumbit button -->
+      <div class="button mb-3">
+        <button type="submit"
+          onclick="login(document.getElementById('username').value, document.getElementById('password').value)">Login</button>
+      </div>
+    </form>
 
     <!-- Password Reset -->
     <div>
@@ -60,14 +65,10 @@
   </div>
 
 
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
 
 </body>
 
 </html>
-
-
-line1 
-
-line2 
-edit  delete
