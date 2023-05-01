@@ -3,7 +3,7 @@
 
 let getProductList = {};// Empty Object - Global Scope
 
-    fetch('json/data_wellow.json')
+    fetch('json/updated_wellow.json')
       .then(response => response.json())// implied return
       .then(info => { // data will be the response as an object
         console.log(info); // Display the array info in the console
@@ -29,7 +29,7 @@ let getProductList = {};// Empty Object - Global Scope
                             <div class="row">
                                 <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                                     <div class="bg-image hover-zoom ripple rounded ripple-surface mobile-image">
-                                        <img src="${info.data[i].imageURL}" class="w-75"/>
+                                        <img src="${info.data[i].image_1}" class="w-75"/>
                                         <a href="#!">
                                             <div class="hover-overlay">
                                                 <div class="mask"
@@ -42,11 +42,11 @@ let getProductList = {};// Empty Object - Global Scope
                                     <h5>${info.data[i].name}</h5>
                                    
                                     <div class="mt-1 mb-0 text-muted small">
-                                        <span>Fresh</span>
+                                        <span>${info.data[i].keyword.split(',')[0]?.trim()}</span>
                                         <span class="text-primary"> • </span>
-                                        <span>Local</span>
+                                        <span>${info.data[i].keyword.split(',')[1]?.trim()}</span>
                                         <span class="text-primary"> • </span>
-                                        <span>Fruits<br /></span>
+                                        <span>${info.data[i].keyword.split(',')[2]?.trim()}<br /></span>
                                     </div>
                                     
                                     <p class="mb-2 mb-md-2">
@@ -63,7 +63,7 @@ let getProductList = {};// Empty Object - Global Scope
                                     </div>
                                     
                                     <div class="d-flex flex-column mt-4">
-                                        <h6 class="text">Quantity: (${info.data[i].unit})</h6>
+                                        <h6 class="text">Quantity: (${info.data[i].item_unit})</h6>
                                         <input class="" type="number" id="stepper" name="stepper" value="1"
                                             min="1" max="100" step="1">
                                         <button class="btn btn-outline-primary btn-sm mt-2" type="button">
@@ -94,14 +94,14 @@ let getProductList = {};// Empty Object - Global Scope
           <div class="modal-body p-5">
             <h2 class="fw-bold mb-2">${getProductList.data[index].name}</h2>
 
-                <img src="${getProductList.data[index].imageURL}" class="bi text-body-secondary flex-shrink-0" width="50%" height="50%">
+                <img src="${getProductList.data[index].image_1}" class="bi text-body-secondary flex-shrink-0" width="50%" height="50%">
                 <div>
                   <div class="mt-1 mb-0 text-muted small">
-                      <span>Fresh</span>
+                      <span>${getProductList.data[index].keyword.split(',')[0]?.trim()}</span>
                       <span class="text-primary"> • </span>
-                      <span>Local</span>
+                      <span>${getProductList.data[index].keyword.split(',')[1]?.trim()}</span>
                       <span class="text-primary"> • </span>
-                      <span>Fruits<br /></span>
+                      <span>${getProductList.data[index].keyword.split(',')[2]?.trim()}<br /></span>
                   </div>
                   <h5 class="mb-0">Product Description:</h5>
                  

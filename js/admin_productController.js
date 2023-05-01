@@ -1,16 +1,16 @@
 //"use strict"; //help browser to run in struct to eliminate some js silent errors by changing them to throw errors
-
+document.addEventListener('DOMContentLoaded', init, false);
 
 // admin product CRUD
-
-
+let sortCol;
+let sortAsc = false;
 let getAdminProductList = {};// Empty Object - Global Scope
-function firstload(getAdminProductList) {
+async function init() {
     // Get the JSON data from the server
-fetch('json/data_wellow.json') // fetch the data from the server
+fetch('json/updated_wellow.json') // fetch the data from the server
     .then(adminResponse => adminResponse.json())// implied return. convert the response to json
     .then(adminInfo => { // data will be the response as an object
-        console.log(adminInfo); // Display the array info in the console
+        //console.log(adminInfo); // Display the array info in the console
 
         getAdminProductList = adminInfo;// store the data in the global variable
 
@@ -18,33 +18,39 @@ fetch('json/data_wellow.json') // fetch the data from the server
 // Add data to JSON file
 const newProduct = [{
     "id": getAdminProductList.data.length + 1,
+    "category": "Fruit",
+    "keywords": "mushroom, antioxidants, medicinal, Indonesia",
     "name": "Apple",
-    "summary": "Summary",
-    //"category": pCat,
-    "imageURL": "img/products/apple.png",
+    "image_1": "img/products/apple.png",
+    "img_credit_1": "https://unsplash.com/photos/6Y1lH3h8B6w",
+    "image_2": "img/products/apple2.png",
+    "img_credit_2": "https://unsplash.com/photos/6Y1lH3h8B6w",
+    "stock_count": 50,
+    "item_unit": "kg",
     "price": 40,
-    "stock": "50",
-    "unit": "kg",
-   // "keywords": pKey.split(',').map((keyword) => keyword.trim()),
+    "summary": "Summary",   
     "description": "description"
 },
 {
 "id": getAdminProductList.data.length + 1,
+"category": "Fruit",
+    "keywords": "mushroom, antioxidants, medicinal, Indonesia",
     "name": "Orange",
-    "summary": "Summary",
-    //"category": pCat,
-    "imageURL": "img/products/orange.png",
+    "image_1": "img/products/orange.png",
+    "img_credit_1": "https://unsplash.com/photos/6Y1lH3h8B6w",
+    "image_2": "img/products/orange2.png",
+    "img_credit_2": "https://unsplash.com/photos/6Y1lH3h8B6w",
+    "stock_count": 40,
+    "item_unit": "kg",
     "price": 40,
-    "stock": "50",
-    "unit": "kg",
-   // "keywords": pKey.split(',').map((keyword) => keyword.trim()),
+    "summary": "Summary",
     "description": "description"
     }
 ]
 ;
 
 // concat method is used to add one array to another array
-getAdminProductList.data = getAdminProductList.data.concat(newProduct);
+ getAdminProductList.data = getAdminProductList.data.concat(newProduct);
 
 
  // Add one new product to the getAdminProductList array
@@ -52,9 +58,16 @@ getAdminProductList.data = getAdminProductList.data.concat(newProduct);
 
 
         displayAdminProduct(getAdminProductList);// call the displayProduct function to display the data on the front-end
+     
+        console.log(getAdminProductList);
+    
     });
+   
 }
-firstload(getAdminProductList);// call the firstload function to load the data from the server
+
+
+
+//firstload(getAdminProductList);// call the firstload function to load the data from the server
 
 function displayAdminProduct(getAdminProductList) {
 
@@ -70,9 +83,9 @@ function displayAdminProduct(getAdminProductList) {
                 </span>
             </td>
             <td>${getAdminProductList.data[i].name}</td>
-            <td><img src="${getAdminProductList.data[i].imageURL}" class="w-50"/></td>
-            <td>${getAdminProductList.data[i].stock}</td>
-            <td>${getAdminProductList.data[i].unit}</td>
+            <td><img src="${getAdminProductList.data[i].image_1}" class="w-50"/></td>
+            <td>${getAdminProductList.data[i].stock_count}</td>
+            <td>${getAdminProductList.data[i].item_unit}</td>
             <td>$${getAdminProductList.data[i].price}</td>
             <td>${getAdminProductList.data[i].summary}</td>
             <td class="d-none">${getAdminProductList.data[i].description}</td>
@@ -83,6 +96,7 @@ function displayAdminProduct(getAdminProductList) {
                         class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
             </td>
         </tr>`
+        
     }
 
     $(document).ready(function () {
@@ -109,8 +123,41 @@ function displayAdminProduct(getAdminProductList) {
         });
     });
 
+   
+
     document.querySelector("#productRow").innerHTML = admindetails;
+
+      // listen for sort clicks
+  document.querySelectorAll('#sortProduct thead tr th').forEach(t => {
+    t.addEventListener('click', sort, false);
+ });
 }
+
+
+// sort the data by the selected column
+function sort(e) {
+    // let thisSort = e.target.dataset.sort;
+    // if(sortCol === thisSort) sortAsc = !sortAsc;
+    // sortCol = thisSort;
+    // getAdminProductList.sort((a, b) => {
+    //   if(a[sortCol] < b[sortCol]) return sortAsc?1:-1;
+    //   if(a[sortCol] > b[sortCol]) return sortAsc?-1:1;
+    //   return 0;
+    // });
+    // displayAdminProduct(getAdminProductList);
+
+    let thisSort = e.target.dataset.sort;
+  if (sortCol === thisSort) sortAsc = !sortAsc;
+  sortCol = thisSort;
+  getAdminProductList.data.sort((a, b) => {
+    if (a[sortCol] < b[sortCol]) return sortAsc ? -1 : 1;
+    if (a[sortCol] > b[sortCol]) return sortAsc ? 1 : -1;
+    return 0;
+  });
+  displayAdminProduct(getAdminProductList);
+  }
+
+
 
 function addProduct() {
     /* Requirenments:

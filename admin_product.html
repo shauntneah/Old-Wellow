@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="css/compon_navbar.css" />
     <link rel="stylesheet" href="css/compon_footer.css" />
 
+    <style>
+    th {
+        cursor: pointer;
+      }
+      </style>
 </head>
 
 <body>
@@ -38,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover" id="sortProduct">
                     <thead>
                         <tr>
                             <th>
@@ -47,11 +52,11 @@
                                     <label for="selectAll"></label>
                                 </span>
                             </th>
-                            <th>Name</th>
+                            <th data-sort="name">Name</th>
                             <th>Image</th>
-                            <th>Stock</th>
+                            <th data-sort="stock_count">Stock</th>
                             <th>Unit</th>
-                            <th>Price</th>
+                            <th data-sort="price">Price</th>
                             <th>Summary</th>
                             <th>Actions</th>
 
@@ -217,8 +222,14 @@
                     </div>
 
                     <div class="modal-body">
-                        <label for="productImage" class="form-label">Product Image:</label>
-                        <input type="file" class="form-control" id="pImg" aria-label="product image" required>
+                        <label for="productImage1" class="form-label">Product Image 1:</label>
+                        <input type="file" class="form-control" id="pImg" aria-label="product image 1" required>
+                        <div class="invalid-feedback" id="invalid-image">Please upload a product image</div>
+                    </div>
+
+                    <div class="modal-body">
+                        <label for="productImage2" class="form-label">Product Image 2:</label>
+                        <input type="file" class="form-control" id="pImg2" aria-label="product image 2" required>
                         <div class="invalid-feedback" id="invalid-image">Please upload a product image</div>
                     </div>
 
