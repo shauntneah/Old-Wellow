@@ -1,7 +1,15 @@
 //"use strict"; //help browser to run in struct to eliminate some js silent errors by changing them to throw errors
 document.addEventListener('DOMContentLoaded', init, false);
 
+$(document).on('click', '.pagination li', function () {
+    $('.pagination li').removeClass('active');
+    $(this).addClass('active');
+  });
+
 // admin product CRUD
+const pageSize = 5;
+let curPage = 1;
+
 let sortCol;
 let sortAsc = false;
 let getAdminProductList = {};// Empty Object - Global Scope
@@ -65,16 +73,101 @@ const newProduct = [{
    
 }
 
+document.querySelector('#nextButton').addEventListener('click', nextPage, false);
+document.querySelector('#prevButton').addEventListener('click', previousPage, false);
 
+function previousPage() {
+    if(curPage > 1) curPage--;
+    displayAdminProduct(getAdminProductList);
+  }
+  
+  function nextPage() {
+    if((curPage * pageSize) < adminInfo.length) curPage++;
+    displayAdminProduct(getAdminProductList);
+  }
 
 //firstload(getAdminProductList);// call the firstload function to load the data from the server
 
-function displayAdminProduct(getAdminProductList) {
+// function displayAdminProduct(getAdminProductList) {
+
+//     let admindetails = "";
+//     console.log(getAdminProductList.data.length);
+
+   
+
+//     for (let i = 0; i < getAdminProductList.data.length; i++) {
+
+//         admindetails += `<tr>
+//             <td>
+//                 <span class="custom-checkbox">
+//                     <input type="checkbox" id="checkbox${i + 1}" name="options[]" value="1">
+//                     <label for="checkbox${i + 1}"></label>
+//                 </span>
+//             </td>
+//             <td>${getAdminProductList.data[i].name}</td>
+//             <td><img src="${getAdminProductList.data[i].image_1}" class="w-50"/></td>
+//             <td>${getAdminProductList.data[i].stock_count}</td>
+//             <td>${getAdminProductList.data[i].item_unit}</td>
+//             <td>$${getAdminProductList.data[i].price}</td>
+//             <td>${getAdminProductList.data[i].summary}</td>
+//             <td class="d-none">${getAdminProductList.data[i].description}</td>
+//             <td>
+//                 <a href="#editProductModal" class="edit" data-toggle="modal"><i class="material-icons"
+//                         data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+//                 <a href="#deleteProductModal" class="delete" data-toggle="modal"><i
+//                         class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+//             </td>
+//         </tr>`
+        
+//     }
+
+//     $(document).ready(function () {
+//         // Activate tooltip
+//         $('[data-toggle="tooltip"]').tooltip();
+
+//         // Select/Deselect checkboxes
+//         var checkbox = $('table tbody input[type="checkbox"]');
+//         $("#selectAll").click(function () {
+//             if (this.checked) {
+//                 checkbox.each(function () {
+//                     this.checked = true;
+//                 });
+//             } else {
+//                 checkbox.each(function () {
+//                     this.checked = false;
+//                 });
+//             }
+//         });
+//         checkbox.click(function () {
+//             if (!this.checked) {
+//                 $("#selectAll").prop("checked", false);
+//             }
+//         });
+//     });
+
+   
+
+//     document.querySelector("#productRow").innerHTML = admindetails;
+
+   
+
+//       // listen for sort clicks
+//   document.querySelectorAll('#sortProduct thead tr th').forEach(t => {
+//     t.addEventListener('click', sort, false);
+//  });
+// }
+
+
+// update with pagination
+function displayAdminProduct(getAdminProductList, page) {
+    curPage = page || curPage;
 
     let admindetails = "";
-    console.log(getAdminProductList.data.length);
-    for (let i = 0; i < getAdminProductList.data.length; i++) {
+    let startIdx = (curPage - 1) * pageSize;
+    let endIdx = startIdx + pageSize;
+    let totalItems = getAdminProductList.data.length;
 
+    for (let i = startIdx; i < endIdx && i < totalItems; i++) {
         admindetails += `<tr>
             <td>
                 <span class="custom-checkbox">
@@ -95,42 +188,29 @@ function displayAdminProduct(getAdminProductList) {
                 <a href="#deleteProductModal" class="delete" data-toggle="modal"><i
                         class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
             </td>
-        </tr>`
-        
+        </tr>`;
     }
-
-    $(document).ready(function () {
-        // Activate tooltip
-        $('[data-toggle="tooltip"]').tooltip();
-
-        // Select/Deselect checkboxes
-        var checkbox = $('table tbody input[type="checkbox"]');
-        $("#selectAll").click(function () {
-            if (this.checked) {
-                checkbox.each(function () {
-                    this.checked = true;
-                });
-            } else {
-                checkbox.each(function () {
-                    this.checked = false;
-                });
-            }
-        });
-        checkbox.click(function () {
-            if (!this.checked) {
-                $("#selectAll").prop("checked", false);
-            }
-        });
-    });
-
-   
 
     document.querySelector("#productRow").innerHTML = admindetails;
 
-      // listen for sort clicks
-  document.querySelectorAll('#sortProduct thead tr th').forEach(t => {
-    t.addEventListener('click', sort, false);
- });
+    // Update pagination information
+    let totalPages = Math.ceil(totalItems / pageSize);
+    let startItem = Math.min((curPage - 1) * pageSize + 1, totalItems);
+    let endItem = Math.min(startItem + pageSize - 1, totalItems);
+    document.querySelector("#startIdx").textContent = startItem;
+    document.querySelector("#endIdx").textContent = endItem;
+    document.querySelector("#totalItems").textContent = totalItems;
+    
+    // Disable previous/next buttons if necessary
+    document.querySelector("#prevButton").classList.toggle("disabled", curPage === 1);
+    document.querySelector("#nextButton").classList.toggle("disabled", curPage === totalPages);
+    
+    // Update pagination links
+    let pageLinks = "";
+    for (let i = 1; i <= totalPages; i++) {
+        pageLinks += `<li class="page-item ${curPage === i ? 'active' : ''}"><a href="#" class="page-link" onclick="displayAdminProduct(getAdminProductList, ${i})">${i}</a></li>`;
+    }
+    document.querySelector(".pagination").innerHTML = pageLinks;
 }
 
 

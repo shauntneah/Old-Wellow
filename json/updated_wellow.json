@@ -48,7 +48,7 @@
     },
       {
       "id": 4,
-      "category": "vegetable",
+      "category": "Vegetable",
       "keyword": "vegetable, wasabi, limited availability, Japan",
       "name": "Wasabi Roots",
       "image_1": "img/products/wasabi_roots.jpeg",
@@ -63,7 +63,7 @@
     },
       {
       "id": 5,
-      "category": "vegetable",
+      "category": "Vegetable",
       "keyword": "vegtable, potato, limited availability, France",
       "name": "La Bonnotte Potatoes",
       "image_1": "img/products/la_bonnotte_potatoes.jpg",
@@ -78,7 +78,7 @@
     },
       {
       "id": 6,
-      "category": "vegetable",
+      "category": "Vegetable",
       "keyword": "vegetable, peas, limited availability, Spain",
       "name": "Spanish Tear Peas",
       "image_1": "img/products/spanish_peas.jpg",
@@ -93,7 +93,7 @@
     },
       {
       "id": 7,
-      "category": "fruit",
+      "category": "Fruit",
       "keyword": "fruit, grapes, fresh, limited availability, Xinjiang",
       "name": "Turpan Valley Red Grapes",
       "image_1": "img/products/turpan_grapes.jpg",
@@ -108,7 +108,7 @@
     },
       {
       "id": 8,
-      "category": "mushroom",
+      "category": "Mushroom",
       "keyword": "mushroom, antioxidants, medicinal, Indonesia",
       "name": "Lion's Mane Mushroom",
       "image_1": "img/products/lions_mane.jpg",
@@ -123,7 +123,7 @@
     },
       {
       "id": 9,
-      "category": "fruit",
+      "category": "Fruit",
       "keyword": "fruit, Melon, Japan",
       "name": "Furano Melon",
       "image_1": "img/products/furano_melon.jpeg",
@@ -138,7 +138,7 @@
     },
       {
       "id": 10,
-      "category": "vegetable",
+      "category": "Vegetable",
       "keyword": "vegetable, culinary, medicinal, limited availability, Netherlands",
       "name": "Hop Shoots",
       "image_1": "img/products/hop_shoots.jpg",
@@ -168,7 +168,7 @@
     },   
       {
       "id": 12,
-      "category": "fruit",
+      "category": "Fruit",
       "keyword": "fruit, durian, Malaysia",
       "name": "Black Thorn Durian (D200)",
       "image_1": "img/products/black_thorn.jpg",
@@ -183,7 +183,7 @@
     },
       {
       "id": 13,
-      "category": "flower",
+      "category": "Flower",
       "keyword": "flower, squash, limited availability, Malaysia",
       "name": "Squash Blossoms",
       "image_1": "img/products/squash_blossom.jpeg",
@@ -198,7 +198,7 @@
     },
       {
       "id": 14,
-      "category": "flower",
+      "category": "Flower",
       "keyword": "flower, orchid, limited availability, support local, Singapore",
       "name": "Edible Karma Orchids",
       "image_1": "img/products/karma_orchid.jpeg",
@@ -213,7 +213,7 @@
     },
       {
       "id": 15,
-      "category": "flower",
+      "category": "Flower",
       "keyword": "flower, orchid, microgreen, limited availability, support local, Singapore",
       "name": "Edible Karma Orchids",
       "image_1": "img/products/micro_orchids.jpeg",
@@ -228,7 +228,7 @@
     },
       {
       "id": 16,
-      "category": "vegetable",
+      "category": "Vegetable",
       "keyword": "vegetable, microgreen, limited availability, support local, Singapore",
       "name": "Broccoli Microgreen",
       "image_1": "img/products/broccoli_microgreen.jpeg",
