@@ -211,6 +211,10 @@ function displayAdminProduct(getAdminProductList, page) {
         pageLinks += `<li class="page-item ${curPage === i ? 'active' : ''}"><a href="#" class="page-link" onclick="displayAdminProduct(getAdminProductList, ${i})">${i}</a></li>`;
     }
     document.querySelector(".pagination").innerHTML = pageLinks;
+          // listen for sort clicks
+  document.querySelectorAll('#sortProduct thead tr th').forEach(t => {
+    t.addEventListener('click', sort, false);
+ });
 }
 
 
