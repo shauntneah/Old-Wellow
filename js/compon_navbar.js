@@ -20,10 +20,10 @@ searchForm.addEventListener('submit', (event) => {
 // Putting search field inside hamburger icon NOT WORKING! Hamburger icon closes when search field is clicked
 
 // To allow the user to enter input in the search field without closing the hamburger main menu
-const searchInput = document.querySelector('.search-input');
-searchInput.addEventListener('click', (event) => {
-  event.stopPropagation(); // Stop the click event from bubbling up to parent elements
-});
+// const searchInput = document.querySelector('.search-input');
+// searchInput.addEventListener('click', (event) => {
+//   event.stopPropagation(); // Stop the click event from bubbling up to parent elements
+// });
 
 document.addEventListener('click', (event) => {
     const isClickInside = hamburgerMenu.contains(event.target) || searchInput.contains(event.target);
@@ -31,4 +31,10 @@ document.addEventListener('click', (event) => {
     if (!isClickInside) {
         toggleMobileMenu(hamburgerMenu);
     }
+});
+
+// search not working
+document.querySelector(".search-input").addEventListener("keyup", function () {
+  console.log(document.querySelector(".search-input").value);
+  displayProduct(getProductList, document.querySelector('.filter-button-group button.active').value, this.value);
 });

@@ -157,15 +157,21 @@ function previousPage() {
 //  });
 // }
 
+document.querySelector("#search").addEventListener("keyup", function () {
+    //console.log(document.querySelector("#search").value);
+    displayAdminProduct(getProductList.data, page, this.value);
+});
 
-// update with pagination
-function displayAdminProduct(getAdminProductList, page) {
+// update with search
+function displayAdminProduct(getAdminProductList, page, searchTerm) {
     curPage = page || curPage;
+    searchTerm = searchTerm ? searchTerm.toLowerCase() : '';
 
     let admindetails = "";
+    let filteredProducts = getAdminProductList.data.filter(product => product.name.toLowerCase().includes(searchTerm));
     let startIdx = (curPage - 1) * pageSize;
     let endIdx = startIdx + pageSize;
-    let totalItems = getAdminProductList.data.length;
+    let totalItems = filteredProducts.length;
 
     for (let i = startIdx; i < endIdx && i < totalItems; i++) {
         admindetails += `<tr>
@@ -175,13 +181,13 @@ function displayAdminProduct(getAdminProductList, page) {
                     <label for="checkbox${i + 1}"></label>
                 </span>
             </td>
-            <td>${getAdminProductList.data[i].name}</td>
-            <td><img src="${getAdminProductList.data[i].image_1}" class="w-50"/></td>
-            <td>${getAdminProductList.data[i].stock_count}</td>
-            <td>${getAdminProductList.data[i].item_unit}</td>
-            <td>$${getAdminProductList.data[i].price}</td>
-            <td>${getAdminProductList.data[i].summary}</td>
-            <td class="d-none">${getAdminProductList.data[i].description}</td>
+            <td>${filteredProducts[i].name}</td>
+            <td><img src="${filteredProducts[i].image_1}" class="w-50"/></td>
+            <td>${filteredProducts[i].stock_count}</td>
+            <td>${filteredProducts[i].item_unit}</td>
+            <td>$${filteredProducts[i].price}</td>
+            <td>${filteredProducts[i].summary}</td>
+            <td class="d-none">${filteredProducts[i].description}</td>
             <td>
                 <a href="#editProductModal" class="edit" data-toggle="modal"><i class="material-icons"
                         data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -208,14 +214,75 @@ function displayAdminProduct(getAdminProductList, page) {
     // Update pagination links
     let pageLinks = "";
     for (let i = 1; i <= totalPages; i++) {
-        pageLinks += `<li class="page-item ${curPage === i ? 'active' : ''}"><a href="#" class="page-link" onclick="displayAdminProduct(getAdminProductList, ${i})">${i}</a></li>`;
+        pageLinks += `<li class="page-item ${curPage === i ? 'active' : ''}"><a href="#" class="page-link" onclick="displayAdminProduct(getAdminProductList, ${i}, '${searchTerm}')">${i}</a></li>`;
     }
     document.querySelector(".pagination").innerHTML = pageLinks;
-          // listen for sort clicks
-  document.querySelectorAll('#sortProduct thead tr th').forEach(t => {
-    t.addEventListener('click', sort, false);
- });
+          
+    // listen for sort clicks
+    document.querySelectorAll('#sortProduct thead tr th').forEach(t => {
+        t.addEventListener('click', sort, false);
+    });
 }
+
+
+// update with pagination
+// function displayAdminProduct(getAdminProductList, page) {
+//     curPage = page || curPage;
+
+//     let admindetails = "";
+//     let startIdx = (curPage - 1) * pageSize;
+//     let endIdx = startIdx + pageSize;
+//     let totalItems = getAdminProductList.data.length;
+
+//     for (let i = startIdx; i < endIdx && i < totalItems; i++) {
+//         admindetails += `<tr>
+//             <td>
+//                 <span class="custom-checkbox">
+//                     <input type="checkbox" id="checkbox${i + 1}" name="options[]" value="1">
+//                     <label for="checkbox${i + 1}"></label>
+//                 </span>
+//             </td>
+//             <td>${getAdminProductList.data[i].name}</td>
+//             <td><img src="${getAdminProductList.data[i].image_1}" class="w-50"/></td>
+//             <td>${getAdminProductList.data[i].stock_count}</td>
+//             <td>${getAdminProductList.data[i].item_unit}</td>
+//             <td>$${getAdminProductList.data[i].price}</td>
+//             <td>${getAdminProductList.data[i].summary}</td>
+//             <td class="d-none">${getAdminProductList.data[i].description}</td>
+//             <td>
+//                 <a href="#editProductModal" class="edit" data-toggle="modal"><i class="material-icons"
+//                         data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+//                 <a href="#deleteProductModal" class="delete" data-toggle="modal"><i
+//                         class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+//             </td>
+//         </tr>`;
+//     }
+
+//     document.querySelector("#productRow").innerHTML = admindetails;
+
+//     // Update pagination information
+//     let totalPages = Math.ceil(totalItems / pageSize);
+//     let startItem = Math.min((curPage - 1) * pageSize + 1, totalItems);
+//     let endItem = Math.min(startItem + pageSize - 1, totalItems);
+//     document.querySelector("#startIdx").textContent = startItem;
+//     document.querySelector("#endIdx").textContent = endItem;
+//     document.querySelector("#totalItems").textContent = totalItems;
+    
+//     // Disable previous/next buttons if necessary
+//     document.querySelector("#prevButton").classList.toggle("disabled", curPage === 1);
+//     document.querySelector("#nextButton").classList.toggle("disabled", curPage === totalPages);
+    
+//     // Update pagination links
+//     let pageLinks = "";
+//     for (let i = 1; i <= totalPages; i++) {
+//         pageLinks += `<li class="page-item ${curPage === i ? 'active' : ''}"><a href="#" class="page-link" onclick="displayAdminProduct(getAdminProductList, ${i})">${i}</a></li>`;
+//     }
+//     document.querySelector(".pagination").innerHTML = pageLinks;
+//           // listen for sort clicks
+//   document.querySelectorAll('#sortProduct thead tr th').forEach(t => {
+//     t.addEventListener('click', sort, false);
+//  });
+// }
 
 
 // sort the data by the selected column

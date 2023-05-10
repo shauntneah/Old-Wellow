@@ -41,6 +41,7 @@ fetch('json/updated_wellow.json')
 
    
     document.querySelector("#search").addEventListener("keyup", function () {
+        //console.log(document.querySelector("#search").value);
         displayProduct(getProductList, document.querySelector('.filter-button-group button.active').value, this.value);
     });
 
@@ -135,7 +136,7 @@ function displayProduct(info, category, searchInput) {
         // Display products based on category and search input
         for (var i = 0; i < filteredProducts.length; i++) {
             var product = filteredProducts[i];
-            if (product.category === category) {
+            if (product.category === category || product.keyword.includes(category)) {
                 count++;
                 details += `<div class="row justify-content-center mb-3 mobile-card">
                 <div class="col-md-12 col-xl-10">
